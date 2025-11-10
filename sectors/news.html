@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News - NepLink</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/nepal-theme.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -566,7 +567,8 @@
 
     <!-- News Header -->
     <section class="news-header">
-        <div class="container">
+        <div class="container" style="position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('../img/category/news.png') center/cover no-repeat; opacity: 0.2;"></div>
             <h1>Latest News</h1>
             <p>Stay updated with the latest news from Nepal and the Nepali diaspora</p>
         </div>
@@ -733,7 +735,7 @@
                     const newsCard = document.createElement('div');
                     newsCard.className = 'news-card';
                     newsCard.innerHTML = `
-                        <img src="${item.image || 'https://placehold.co/800x200/ff6b35/ffffff?text=News+Image'}" alt="${item.title}" onerror="this.onerror=null; this.src='https://placehold.co/800x200/ff6b35/ffffff?text=News+Image';">
+                        <img src="${item.image || '../img/category/news.png'}" alt="${item.title}" onerror="this.onerror=null; this.src='../img/category/news.png';">
                         <div class="news-content">
                             <span class="news-category">${item.category}</span>
                             <h3>${item.title}</h3>

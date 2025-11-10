@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NepLink - Connecting the Global Nepali Community</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/nepal-theme.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -836,7 +837,8 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
+        <div class="container" style="position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('img/category/hero.png') center/cover no-repeat; opacity: 0.3; border-radius: 20px;"></div>
             <h1>Connecting the Global <span class="highlight">Nepali</span> Community</h1>
             <p>Your one-stop platform for news, marketplace, jobs, and community connections. Join thousands of Nepali people worldwide in building a stronger community.</p>
             <a href="login/" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
@@ -850,7 +852,7 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-newspaper"></i>
+                        <img src="img/category/feature-news.png" alt="News" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                     </div>
                     <h3>Latest News</h3>
                     <p>Stay updated with the latest news from Nepal and the global Nepali diaspora community.</p>
@@ -858,7 +860,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-store"></i>
+                        <img src="img/category/feature-marketplace.png" alt="Marketplace" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                     </div>
                     <h3>Marketplace</h3>
                     <p>Buy and sell products within the Nepali community with secure transactions.</p>
@@ -866,7 +868,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-briefcase"></i>
+                        <img src="img/category/feature-jobs.png" alt="Job Portal" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                     </div>
                     <h3>Job Portal</h3>
                     <p>Find job opportunities and connect with employers in the Nepali network.</p>
@@ -874,7 +876,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-home"></i>
+                        <img src="img/category/feature-rentals.png" alt="Rentals" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                     </div>
                     <h3>Rentals</h3>
                     <p>Find or list rental properties suitable for Nepali families and individuals.</p>
@@ -882,7 +884,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-users"></i>
+                        <img src="img/category/feature-community.png" alt="Community" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                     </div>
                     <h3>Community</h3>
                     <p>Connect with fellow Nepali people and build meaningful relationships.</p>
@@ -890,7 +892,7 @@
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-hands-helping"></i>
+                        <img src="img/category/feature-freelance.png" alt="Freelancing" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                     </div>
                     <h3>Freelancing</h3>
                     <p>Offer your skills or find freelancers for your projects within the community.</p>
@@ -1079,7 +1081,7 @@
                     const newsCard = document.createElement('div');
                     newsCard.className = 'news-card';
                     newsCard.innerHTML = `
-                        <img src="${item.image || 'https://placehold.co/800x200/ff6b35/ffffff?text=News+Image'}" alt="${item.title}" onerror="this.onerror=null; this.src='https://placehold.co/800x200/ff6b35/ffffff?text=News+Image';">
+                        <img src="${item.image || 'img/category/news.png'}" alt="${item.title}" onerror="this.onerror=null; this.src='img/category/news.png';">
                         <div class="news-content">
                             <span class="news-category">${item.category}</span>
                             <h3>${item.title}</h3>
@@ -1114,7 +1116,7 @@
                     productCard.className = 'product-card';
                     productCard.innerHTML = `
                         ${item.condition === 'New' ? '<div class="product-badge">New</div>' : ''}
-                        <img src="${item.images && item.images[0] || 'https://placehold.co/800x200/ff6b35/ffffff?text=Product+Image'}" alt="${item.name}" onerror="this.onerror=null; this.src='https://placehold.co/800x200/ff6b35/ffffff?text=Product+Image';">
+                        <img src="${item.images && item.images[0] || 'img/category/marketplace.png'}" alt="${item.name}" onerror="this.onerror=null; this.src='img/category/marketplace.png';">
                         <div class="product-info">
                             <h3>${item.name}</h3>
                             <p>${item.description.substring(0, 60)}...</p>
@@ -1184,7 +1186,7 @@
                     rentalCard.className = 'rental-card';
                     rentalCard.innerHTML = `
                         <div class="rental-image">
-                            <img src="${rental.images && rental.images[0] || 'https://placehold.co/800x200/ff6b35/ffffff?text=Property+Image'}" alt="${rental.title}" onerror="this.onerror=null; this.src='https://placehold.co/800x200/ff6b35/ffffff?text=Property+Image';">
+                            <img src="${rental.images && rental.images[0] || 'img/category/rentals.png'}" alt="${rental.title}" onerror="this.onerror=null; this.src='img/category/rentals.png';">
                             <div class="rental-badge">${rental.available ? 'Available' : 'Rented'}</div>
                         </div>
                         <div class="rental-info">

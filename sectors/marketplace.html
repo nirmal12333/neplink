@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketplace - NepLink</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/nepal-theme.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -589,7 +590,8 @@
 
     <!-- Marketplace Header -->
     <section class="marketplace-header">
-        <div class="container">
+        <div class="container" style="position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('../img/category/marketplace.png') center/cover no-repeat; opacity: 0.2;"></div>
             <h1>Marketplace</h1>
             <p>Buy and sell products within the Nepali community</p>
         </div>
@@ -769,7 +771,7 @@
                     productCard.className = 'product-card';
                     productCard.innerHTML = `
                         ${item.condition === 'New' ? '<div class="product-badge">New</div>' : ''}
-                        <img src="${item.images && item.images[0] || 'https://placehold.co/800x200/ff6b35/ffffff?text=Product+Image'}" alt="${item.name}" onerror="this.onerror=null; this.src='https://placehold.co/800x200/ff6b35/ffffff?text=Product+Image';">
+                        <img src="${item.images && item.images[0] || '../img/category/marketplace.png'}" alt="${item.name}" onerror="this.onerror=null; this.src='../img/category/marketplace.png';">
                         <div class="product-info">
                             <h3>${item.name}</h3>
                             <p>${item.description}</p>

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NepLink - Connecting the Global Nepali Community</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles/nepal-theme.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -153,9 +152,12 @@
         .hero {
             padding: 150px 5% 100px;
             text-align: center;
-            background: radial-gradient(circle at center, rgba(255,107,53,0.1) 0%, transparent 70%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             position: relative;
             overflow: hidden;
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         .hero::before {
@@ -165,14 +167,17 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjEiIGZpbGw9IiNmZjZiMzUiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
-            opacity: 0.3;
+            background: url('img/category/hero.png') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: -1;
         }
         
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
             animation: fadeInUp 1s ease-out;
+            color: #333;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         }
         
         @keyframes fadeInUp {
@@ -182,10 +187,14 @@
         
         .hero p {
             font-size: 1.2rem;
-            color: var(--text-secondary);
+            color: var(--text-primary);
             max-width: 700px;
             margin: 0 auto 40px;
             animation: fadeInUp 1s ease-out 0.2s both;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px 25px;
+            border-radius: 15px;
         }
         
         .cta-button {
@@ -200,6 +209,8 @@
             transition: all 0.3s ease;
             box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
             animation: fadeInUp 1s ease-out 0.4s both, pulse 2s infinite 2s;
+            border: none;
+            cursor: pointer;
         }
         
         .cta-button:hover {
@@ -210,14 +221,18 @@
         /* Features Section */
         .features {
             padding: 100px 5%;
-            background: var(--white);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             position: relative;
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
         
         .section-title {
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 60px;
+            color: var(--text-primary);
         }
         
         .highlight {
@@ -244,6 +259,7 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
         }
         
         .feature-card::before {
@@ -279,6 +295,7 @@
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
+            color: var(--text-primary);
         }
         
         .feature-card p {
@@ -286,10 +303,36 @@
             line-height: 1.6;
         }
         
+        .feature-link {
+            display: block;
+            margin-top: 20px;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .feature-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-link:hover i {
+            transform: translateX(5px);
+        }
+        
         /* News Section */
         .news-section {
             padding: 100px 5%;
-            background: var(--light-bg);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
         
         .news-grid {
@@ -344,6 +387,7 @@
         .news-card h3 {
             font-size: 1.3rem;
             margin-bottom: 15px;
+            color: var(--text-primary);
         }
         
         .news-card p {
@@ -362,7 +406,10 @@
         /* Marketplace Section */
         .marketplace-section {
             padding: 100px 5%;
-            background: var(--white);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
         
         .marketplace-grid {
@@ -414,6 +461,7 @@
         .product-card h3 {
             font-size: 1.2rem;
             margin-bottom: 10px;
+            color: var(--text-primary);
         }
         
         .product-card p {
@@ -433,7 +481,10 @@
         /* Jobs Section */
         .jobs-section {
             padding: 100px 5%;
-            background: var(--light-bg);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
         
         .jobs-tabs {
@@ -495,6 +546,7 @@
         .job-header h3 {
             font-size: 1.3rem;
             margin: 0;
+            color: var(--text-primary);
         }
         
         .job-type {
@@ -538,7 +590,10 @@
         /* Rentals Section */
         .rentals-section {
             padding: 100px 5%;
-            background: var(--white);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         }
         
         .rentals-grid {
@@ -592,6 +647,7 @@
         .rental-card h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
+            color: var(--text-primary);
         }
         
         .rental-location {
@@ -623,9 +679,12 @@
         
         /* Footer */
         footer {
-            background: var(--white);
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             padding: 70px 5% 30px;
             border-top: 1px solid var(--border-color);
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
         }
         
         .footer-content {
@@ -837,8 +896,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container" style="position: relative;">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('img/category/hero.png') center/cover no-repeat; opacity: 0.3; border-radius: 20px;"></div>
+        <div class="container">
             <h1>Connecting the Global <span class="highlight">Nepali</span> Community</h1>
             <p>Your one-stop platform for news, marketplace, jobs, and community connections. Join thousands of Nepali people worldwide in building a stronger community.</p>
             <a href="login/" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
@@ -850,52 +908,58 @@
         <div class="container">
             <h2 class="section-title">Our <span class="highlight">Features</span></h2>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card" onclick="window.location.href='sectors/news.html'">
                     <div class="feature-icon">
-                        <img src="img/category/feature-news.png" alt="News" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                        <i class="fas fa-newspaper"></i>
                     </div>
                     <h3>Latest News</h3>
                     <p>Stay updated with the latest news from Nepal and the global Nepali diaspora community.</p>
+                    <a href="sectors/news.html" class="feature-link">Explore News <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card" onclick="window.location.href='sectors/marketplace.html'">
                     <div class="feature-icon">
-                        <img src="img/category/feature-marketplace.png" alt="Marketplace" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                        <i class="fas fa-store"></i>
                     </div>
                     <h3>Marketplace</h3>
                     <p>Buy and sell products within the Nepali community with secure transactions.</p>
+                    <a href="sectors/marketplace.html" class="feature-link">Visit Marketplace <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card" onclick="window.location.href='sectors/jobs.html'">
                     <div class="feature-icon">
-                        <img src="img/category/feature-jobs.png" alt="Job Portal" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                        <i class="fas fa-briefcase"></i>
                     </div>
                     <h3>Job Portal</h3>
                     <p>Find job opportunities and connect with employers in the Nepali network.</p>
+                    <a href="sectors/jobs.html" class="feature-link">Find Jobs <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card" onclick="window.location.href='sectors/rentals.html'">
                     <div class="feature-icon">
-                        <img src="img/category/feature-rentals.png" alt="Rentals" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                        <i class="fas fa-home"></i>
                     </div>
                     <h3>Rentals</h3>
                     <p>Find or list rental properties suitable for Nepali families and individuals.</p>
+                    <a href="sectors/rentals.html" class="feature-link">View Rentals <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card" onclick="window.location.href='sectors/news.html'">
                     <div class="feature-icon">
-                        <img src="img/category/feature-community.png" alt="Community" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                        <i class="fas fa-users"></i>
                     </div>
                     <h3>Community</h3>
                     <p>Connect with fellow Nepali people and build meaningful relationships.</p>
+                    <a href="sectors/news.html" class="feature-link">Join Community <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card" onclick="window.location.href='sectors/jobs.html'">
                     <div class="feature-icon">
-                        <img src="img/category/feature-freelance.png" alt="Freelancing" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                        <i class="fas fa-hands-helping"></i>
                     </div>
                     <h3>Freelancing</h3>
                     <p>Offer your skills or find freelancers for your projects within the community.</p>
+                    <a href="sectors/jobs.html" class="feature-link">Find Freelancers <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -1081,7 +1145,7 @@
                     const newsCard = document.createElement('div');
                     newsCard.className = 'news-card';
                     newsCard.innerHTML = `
-                        <img src="${item.image || 'img/category/news.png'}" alt="${item.title}" onerror="this.onerror=null; this.src='img/category/news.png';">
+                        <img src="${item.image || 'https://placehold.co/800x200/ff6b35/ffffff?text=News+Image'}" alt="${item.title}" onerror="this.onerror=null; this.src='https://placehold.co/800x200/ff6b35/ffffff?text=News+Image';">
                         <div class="news-content">
                             <span class="news-category">${item.category}</span>
                             <h3>${item.title}</h3>
@@ -1116,7 +1180,7 @@
                     productCard.className = 'product-card';
                     productCard.innerHTML = `
                         ${item.condition === 'New' ? '<div class="product-badge">New</div>' : ''}
-                        <img src="${item.images && item.images[0] || 'img/category/marketplace.png'}" alt="${item.name}" onerror="this.onerror=null; this.src='img/category/marketplace.png';">
+                        <img src="${item.images && item.images[0] || 'https://placehold.co/800x200/ff6b35/ffffff?text=Product+Image'}" alt="${item.name}" onerror="this.onerror=null; this.src='https://placehold.co/800x200/ff6b35/ffffff?text=Product+Image';">
                         <div class="product-info">
                             <h3>${item.name}</h3>
                             <p>${item.description.substring(0, 60)}...</p>
@@ -1186,7 +1250,7 @@
                     rentalCard.className = 'rental-card';
                     rentalCard.innerHTML = `
                         <div class="rental-image">
-                            <img src="${rental.images && rental.images[0] || 'img/category/rentals.png'}" alt="${rental.title}" onerror="this.onerror=null; this.src='img/category/rentals.png';">
+                            <img src="${rental.images && rental.images[0] || 'https://placehold.co/800x200/ff6b35/ffffff?text=Property+Image'}" alt="${rental.title}" onerror="this.onerror=null; this.src='https://placehold.co/800x200/ff6b35/ffffff?text=Property+Image';">
                             <div class="rental-badge">${rental.available ? 'Available' : 'Rented'}</div>
                         </div>
                         <div class="rental-info">

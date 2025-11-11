@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rentals - NepLink</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../styles/nepal-theme.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -21,11 +20,25 @@
         }
         
         body {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             color: var(--text-primary);
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../img/category/rentals.png') center/cover no-repeat;
+            opacity: 0.05;
+            z-index: -1;
         }
         
         /* Header Styles */
@@ -605,8 +618,7 @@
 
     <!-- Rentals Header -->
     <section class="rentals-header">
-        <div class="container" style="position: relative; overflow: hidden;">
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('../img/category/rentals.png') center/cover no-repeat; opacity: 0.2;"></div>
+        <div class="container">
             <h1>Rental Properties</h1>
             <p>Find or list rental properties suitable for Nepali families</p>
         </div>
@@ -828,7 +840,7 @@
                     rentalCard.className = 'rental-card';
                     rentalCard.innerHTML = `
                         <div class="rental-image">
-                            <img src="${rental.images && rental.images[0] || '../img/category/rentals.png'}" alt="${rental.title}" onerror="this.onerror=null; this.src='../img/category/rentals.png';">
+                            <img src="${rental.images && rental.images[0] || 'https://placehold.co/800x200/ff6b35/ffffff?text=Property+Image'}" alt="${rental.title}" onerror="this.onerror=null; this.src='https://placehold.co/800x200/ff6b35/ffffff?text=Property+Image';">
                             <div class="rental-badge">${rental.available ? 'Available' : 'Rented'}</div>
                         </div>
                         <div class="rental-info">
